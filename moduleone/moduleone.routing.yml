@@ -18,4 +18,9 @@ moduleone.entity_upcaster:
     node: 25
   requirements:
     _custom_access: Drupal\moduleone\Controller\ModuleOneController::nodeCreatorCheck
-
+moduleone.simple_form:
+  path: '/simple-form'
+  defaults:
+    _form: Drupal\moduleone\Form\SimpleForm
+  requirements:
+    _permission: 'access content'
