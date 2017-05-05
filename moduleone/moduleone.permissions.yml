@@ -1,0 +1,4 @@
+access all views:
+  title: 'Access training content'
+  description: 'Allows access training content.'
+  restrict access: TRUE

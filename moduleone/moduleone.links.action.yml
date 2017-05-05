@@ -1,0 +1,5 @@
+moduleone.add_content_action:
+  route_name: 'node.add_page'
+  title: 'Add Content'
+  appears_on:
+    - 'moduleone.entity_upcaster'

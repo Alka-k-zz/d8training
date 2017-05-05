@@ -1,0 +1,6 @@
+moduleone.static_menu_link:
+  title: Static Content
+  description: 'Demo menu link item for static content.'
+  route_name: moduleone.static_content
+  parent: system.admin_config_system
+

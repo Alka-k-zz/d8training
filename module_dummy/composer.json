@@ -1,0 +1,14 @@
+{
+  "name": "drupal/module_dummy",
+  "type": "drupal-module",
+  "description": "dummy module",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/module_dummy",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/module_dummy",
+    "source": "http://cgit.drupalcode.org/module_dummy"
+  },
+  "require": { }
+}

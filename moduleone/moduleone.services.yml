@@ -1,0 +1,6 @@
+services:
+  moduleone.node_creator_check:
+    class: Drupal\moduleone\Access\NodeCreatorCheck
+    arguments: ['@current_user']
+    tags:
+      - { name: 'access_check', applies_to: '_node_creator_check' }

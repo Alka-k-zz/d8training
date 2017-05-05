@@ -1,0 +1,8 @@
+moduleone.tab1:
+  title: Tab 1
+  route_name: moduleone.static_content
+  base_route: moduleone.tab1
+moduleone.tab2:
+  title: Tab 2
+  route_name: moduleone.dynamic_content
+  base_route: moduleone.tab1

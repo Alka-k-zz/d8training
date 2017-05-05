@@ -1,0 +1,21 @@
+moduleone.static_content:
+  path: '/static-content'
+  defaults:
+    _controller: Drupal\moduleone\Controller\ModuleOneController::staticContent
+  requirements:
+    _permission: 'Access training content'
+moduleone.dynamic_content:
+  path: '/dynamic-content/{arg}'
+  defaults:
+    _controller: Drupal\moduleone\Controller\ModuleOneController::dynamicContent
+    arg: 5
+  requirements:
+    _permission: 'Access training content'
+moduleone.entity_upcaster:
+  path: '/list/{node}'
+  defaults:
+    _controller: Drupal\moduleone\Controller\ModuleOneController::entityUpcaster
+    node: 25
+  requirements:
+    _custom_access: Drupal\moduleone\Controller\ModuleOneController::nodeCreatorCheck
+
