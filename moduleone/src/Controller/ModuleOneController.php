@@ -4,8 +4,14 @@ namespace Drupal\moduleone\Controller;
 
 use Drupal\node\NodeInterface;
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Session\AccountProxy;
 
-class ModuleOneController {
+class ModuleOneController implements ContainerInjectionInterface {
+	public function __construct(AccountProxy $account) {
+		$this->account = $account;
+	}
 	public function staticContent() {
 		return [
 				'#markup' => "Hello! I am you node listing page."
@@ -26,11 +32,13 @@ class ModuleOneController {
 		];
 	}
 	public function nodeCreatorCheck(NodeInterface $node) {
-		$account = \Drupal::service ( 'current_user' );
-		if ($node->getOwnerId () === $account->id ()) {
+		if ($node->getOwnerId () === $this->account->id ()) {
 			return AccessResult::allowed ();
 		}
 		return AccessResult::forbidden ();
+	}
+	public static function create(ContainerInterface $container) {
+		return new static ( $container->get ( 'current_user' ) );
 	}
 }
 
