@@ -24,3 +24,9 @@ moduleone.simple_form:
     _form: Drupal\moduleone\Form\SimpleForm
   requirements:
     _permission: 'access content'
+moduleone.data_form:
+  path: '/data-form'
+  defaults:
+    _form: Drupal\moduleone\Form\DataForm
+  requirements:
+    _permission: 'access content'

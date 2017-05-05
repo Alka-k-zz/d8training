@@ -1,0 +1,27 @@
+<?php
+
+function moduleone_schema() {
+  $schema = [];
+
+  $schema['data_form'] = [
+    'description' => 'Demo table storing Name & Last name submissions',
+    'fields' => [
+      'first_name' => [
+        'description' => 'First name as inserted by the user.',
+        'type' => 'varchar_ascii',
+        'length' => 50,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'last_name' => [
+        'description' => 'Last name as inserted by the user',
+        'type' => 'varchar_ascii',
+        'length' => 50,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ]
+  ];
+
+  return $schema;
+}
