@@ -10,3 +10,7 @@ services:
   moduleone.weatherapi:
     class: Drupal\moduleone\WeatherApi
     arguments: ['@http_client', '@config.factory']
+  moduleone.access_header_injector:
+    class: Drupal\moduleone\EventSubscriber\AccessHeaderInjector
+    tags:
+      - {name: event_subsciber}
