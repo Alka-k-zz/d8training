@@ -30,3 +30,12 @@ moduleone.data_form:
     _form: Drupal\moduleone\Form\DataForm
   requirements:
     _permission: 'access content'
+
+moduleone.misc_form:
+  path: '/moduleone/form/misc'
+  defaults:
+    _form: '\Drupal\moduleone\Form\MiscForm'
+    _title: 'MiscForm'
+  requirements:
+    _access: 'TRUE'
+  
