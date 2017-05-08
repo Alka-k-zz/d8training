@@ -7,3 +7,6 @@ services:
   moduleone.db_form_wrapper:
     class: Drupal\moduleone\dbFormWrapper
     arguments: ['@database']
+  moduleone.weatherapi:
+    class: Drupal\moduleone\WeatherApi
+    arguments: ['@http_client', '@config.factory']

@@ -38,4 +38,12 @@ moduleone.misc_form:
     _title: 'MiscForm'
   requirements:
     _access: 'TRUE'
+moduleone.weather-config:
+  path: '/weatherconfig'
+  defaults:
+    _form: '\Drupal\moduleone\Form\WeatherConfigForm'
+    _title: 'Weather API Form'
+  requirements:
+    _permission: 'access content'
+
   

@@ -4,6 +4,8 @@ namespace Drupal\moduleone\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\State\StateInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Class MiscForm.
@@ -11,6 +13,10 @@ use Drupal\Core\Form\FormStateInterface;
  * @package Drupal\moduleone\Form
  */
 class MiscForm extends FormBase {
+	private $state;
+	public function __construct(StateInterface $state) {
+		$this->state = $state;
+	}
 
 	/**
 	 *
@@ -57,6 +63,7 @@ class MiscForm extends FormBase {
 						'india' => $this->t ( 'India' ),
 						'uk' => $this->t ( 'UK' )
 				],
+				'#default' => $this->state->get ( $country ),
 				'#ajax' => [
 						'callback' => 'Drupal\moduleone\Form\MiscForm::populateStates',
 						'wrapper' => 'ajax-callback-wrapper'
@@ -119,5 +126,9 @@ class MiscForm extends FormBase {
 		foreach ( $form_state->getValues () as $key => $value ) {
 			drupal_set_message ( $key . ': ' . $value );
 		}
+		$this->state->set ( $key, $value );
+	}
+	public static function create(ContainerInterface $container) {
+		return new static ( $container->get ( 'state' ) );
 	}
 }
