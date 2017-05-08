@@ -52,12 +52,22 @@ class MiscForm extends FormBase {
 		];
 		$form ['country'] = [
 				'#type' => 'select',
-				'#title' => $this->t ( 'Country' ),
-				'#options' => array (
+				'#title' => $this->t ( 'Select Country' ),
+				'#options' => [
 						'india' => $this->t ( 'India' ),
 						'uk' => $this->t ( 'UK' )
-				),
-				'#size' => 5
+				],
+				'#ajax' => [
+						'callback' => 'Drupal\moduleone\Form\MiscForm::populateStates',
+						'wrapper' => 'ajax-callback-wrapper'
+				]
+		];
+		// Ajax container with 'id' as 'wrapper' value.
+		$form ['ajax-container'] = [
+				'#type' => 'container',
+				'#attributes' => [
+						'id' => 'ajax-callback-wrapper'
+				]
 		];
 
 		$form ['submit'] = [
@@ -66,6 +76,28 @@ class MiscForm extends FormBase {
 		];
 
 		return $form;
+	}
+
+	/**
+	 * Ajax call to states depending on country selected.
+	 */
+	public function populateStates(array &$form, FormStateInterface $form_state) {
+		$country = $form_state->getValue ( 'country' );
+		$states ['india'] = [
+				'MH',
+				'TN',
+				'MP'
+		];
+		$states ['uk'] = [
+				'ENG',
+				'SCO',
+				'WAL'
+		];
+		$form ['ajax-container'] ['states'] = [
+				'#type' => 'select',
+				'#options' => $states [$country]
+		];
+		return $form ['ajax-container'];
 	}
 
 	/**
