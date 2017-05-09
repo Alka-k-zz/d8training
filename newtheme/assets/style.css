@@ -1,0 +1,29 @@
+body {
+	background-color: #dde5ff;
+}
+
+.sub-slogon {
+	background: #aabbcc;
+}
+.region-header {
+	
+}
+.region {
+	border: 1px solid #4f4f4f;
+}
+
+.left-wrapper {
+	width: 100px;
+	clear:both;
+	float: left;
+}
+
+.right-wrapper {
+	height:100%;
+	width: 100px;
+	float: right;
+}
+
+.region-footer {
+	clear: both;
+}

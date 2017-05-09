@@ -1,0 +1,16 @@
+name: newtheme
+type: theme
+description: My Awesome theme
+package: Other
+core: 8.x
+libraries:
+  - newtheme/global-styling
+
+base theme: bartik
+
+regions:
+  content: Content
+  left_sidebar: Left sidebar
+  right_sidebar: Right sidebar
+  header: Header
+  footer: Footer

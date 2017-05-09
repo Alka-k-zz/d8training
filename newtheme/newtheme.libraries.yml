@@ -1,0 +1,10 @@
+global-styling:
+  css:
+    theme:
+      assets/style.css: {}
+  js:
+    assets/global.js: {}
+node-styling:
+  css:
+    theme:
+      assets/node.css: {}
