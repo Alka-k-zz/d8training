@@ -9,10 +9,12 @@ use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 class AccessHeaderInjector implements EventSubscriberInterface {
 	public static function getSubscribedEvents() {
 		return [
-				KernelEvents::RESPONSE => [
+				KernelEvents::RESPONSE => [  // Event
 						'addAccessHeader'
 				]
-		];
+		]; // listener^
+
+
 	}
 	public function addAccessHeader(FilterResponseEvent $event) {
 		$response = $event->getResponse ();

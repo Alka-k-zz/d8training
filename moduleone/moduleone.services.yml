@@ -14,3 +14,7 @@ services:
     class: Drupal\moduleone\EventSubscriber\AccessHeaderInjector
     tags:
       - {name: event_subsciber}
+  moduleone.weather_config_logger:
+    class: Drupal\moduleone\EventSubscriber\WeatherConfigLogger
+    tags:
+      - {name: event_subsciber}
